@@ -12,3 +12,20 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const setEl = document.querySelector('.gallery');
+setEl.style.display = "flex";
+setEl.style.alignContent = "center";
+setEl.style.justifyContent = "space-evenly";
+const imgItemValue = ({ url, alt }) => {
+  return `<li class="gallery-list">
+        <img
+          src="${url}",
+          alt="${alt}",
+          height = 150;
+        />
+      </li>`;
+};
+const cardSet = images.map(imgItemValue).join("");
+
+setEl.insertAdjacentHTML("beforeend", cardSet);
