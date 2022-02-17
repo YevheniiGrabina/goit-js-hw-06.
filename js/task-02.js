@@ -1,4 +1,4 @@
-const setEl = document.querySelector('#ingredients');
+
 const ingredients = [
   'Potatoes',
   'Mushrooms',
@@ -7,9 +7,20 @@ const ingredients = [
   'Herbs',
   'Condiments',
 ];
-const allNewItemEl = ingredients.map(ingredient => {
-  const setItemEl = document.createElement("li");
-  setItemEl.textContent = [ingredient]
-  setItemEl.classList.add('item')
-  setEl.append(setItemEl)
+
+const ingredientsRef = document.querySelector('#ingredients');
+
+
+const ingredientsList = ingredients.map(ingredient => {
+
+  const ingredientRef = document.createElement('li');
+
+  ingredientRef.classList.add('item')
+
+  ingredientRef.textContent = ingredient;
+
+  return ingredientRef;
 });
+
+ingredientsRef.append(...ingredientsList);
+console.log(ingredientsList);
